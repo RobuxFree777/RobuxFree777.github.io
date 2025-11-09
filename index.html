@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nekich - BIO</title>
+    <title>Nekich (nekxd)</title>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JhengHei:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,28 +12,15 @@
             box-sizing: border-box;
         }
         
-        :root {
-            --bg-color: #1a2933;
-            --text-color: #ffffff;
-            --accent-color: #3b8be0;
-            --card-bg: rgba(255, 255, 255, 0.1);
-            --border-color: rgba(255, 255, 255, 0.2);
-            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --background-image: url('https://external-preview.redd.it/8QVT4jjzuVfx9hsxu9IAGwYOPLR7bAYBFT69iZct8pI.png?auto=webp&s=089af5b9cf0daa163a5637896e92971468b1b747');
-        }
-        
         body {
-            background: var(--background-image) no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-color);
+            background: linear-gradient(135deg, #1a3c6e 0%, #2a5a8c 50%, #3b8be0 100%);
+            color: #ffffff;
             line-height: 1.6;
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
-            font-family: var(--font-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: relative;
-            transition: all 0.5s ease;
             min-height: 100vh;
             font-size: 9pt;
         }
@@ -46,54 +32,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 41, 51, 0.7);
-            backdrop-filter: blur(10px);
-            z-index: -1;
-            transition: all 0.5s ease;
-        }
-        
-        /* Стиль Metro (Windows 8) */
-        body.metro {
-            --bg-color: #000000;
-            --text-color: #ffffff;
-            --accent-color: #0078d7;
-            --card-bg: rgba(255, 255, 255, 0.1);
-            --border-color: rgba(255, 255, 255, 0.2);
-            --font-main: 'JhengHei', sans-serif;
-            --font-heading: 'JhengHei', sans-serif;
-            --background-image: none;
-            background: #000;
-            font-family: 'JhengHei', sans-serif;
-        }
-        
-        body.metro::before {
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: none;
-        }
-        
-        body.metro h1,
-        body.metro h2,
-        body.metro h3 {
-            font-family: 'JhengHei', sans-serif;
-            font-weight: 300;
-        }
-        
-        body.metro h1 {
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-        
-        /* Стиль Aero Liquid Glass */
-        body.aero {
-            background: linear-gradient(135deg, #1a3c6e 0%, #2a5a8c 50%, #3b8be0 100%);
-        }
-        
-        body.aero::before {
             background: rgba(26, 41, 51, 0.4);
             backdrop-filter: blur(15px) brightness(1.2);
+            z-index: -1;
         }
         
-        /* Окно в стиле Windows 7 для Aero */
+        /* Окно в стиле Windows 7 Aero */
         .aero-window {
             background: rgba(255, 255, 255, 0.15);
             border-radius: 8px;
@@ -148,157 +92,54 @@
             padding: 25px;
         }
         
-        /* Переключатель тем */
-        .theme-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 15px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .theme-btn {
-            padding: 10px 15px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Segoe UI', sans-serif;
-            font-weight: 500;
-            color: white;
-            text-align: center;
-            min-width: 120px;
-        }
-        
-        .theme-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .theme-btn.active {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .theme-metro {
-            background: linear-gradient(135deg, #0078d7, #00bcf2);
-        }
-        
-        .theme-aero {
-            background: linear-gradient(135deg, #3b8be0, #6baed6);
-        }
-        
         header {
             margin-bottom: 40px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
+            text-align: center;
         }
         
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
             color: #fff;
-            font-family: var(--font-heading);
             text-shadow: 0 0 10px rgba(59, 139, 224, 0.7);
+            font-weight: 300;
         }
         
         h2 {
             font-size: 1.8rem;
             margin: 30px 0 15px;
             color: #fff;
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid #3b8be0;
             padding-left: 10px;
-            font-family: var(--font-heading);
+            font-weight: 400;
         }
         
         h3 {
             font-size: 1.4rem;
             margin: 25px 0 10px;
-            color: #ccc;
+            color: #e0e0e0;
+            font-weight: 400;
         }
         
         p {
             margin-bottom: 15px;
+            line-height: 1.5;
         }
         
         .subtitle {
             font-size: 1.3rem;
-            color: #aaa;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
             font-style: italic;
         }
         
-        .section {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
         .highlight {
-            background-color: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 5px;
             margin: 20px 0;
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid #3b8be0;
             backdrop-filter: blur(5px);
-        }
-        
-        /* Плитки для Metro */
-        .metro-tiles {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 10px;
-            margin: 20px 0;
-        }
-        
-        .metro-tile {
-            background: var(--accent-color);
-            color: white;
-            padding: 20px;
-            border-radius: 2px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            min-height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-weight: normal;
-            font-family: 'JhengHei', sans-serif;
-        }
-        
-        .metro-tile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-        
-        .metro-tile.small {
-            background: #e81123;
-        }
-        
-        .metro-tile.medium {
-            background: #107c10;
-        }
-        
-        .metro-tile.large {
-            background: #0078d7;
-            grid-column: span 2;
-        }
-        
-        .metro-tile.wide {
-            background: #ffb900;
-            grid-column: span 2;
-        }
-        
-        .tile-icon {
-            font-size: 24px;
-            margin-bottom: 10px;
         }
         
         .stats {
@@ -308,7 +149,7 @@
         }
         
         .stat-item {
-            background-color: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 5px;
             flex: 1;
@@ -318,6 +159,7 @@
         
         .stat-item:hover {
             transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
         
         .links {
@@ -328,20 +170,20 @@
         }
         
         .link {
-            background-color: rgba(42, 42, 42, 0.9);
+            background: rgba(42, 42, 42, 0.9);
             padding: 10px 20px;
             border-radius: 20px;
             text-decoration: none;
-            color: var(--text-color);
+            color: #ffffff;
             transition: all 0.3s;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
         .link:hover {
-            background-color: rgba(60, 60, 60, 0.9);
+            background: rgba(60, 60, 60, 0.9);
             transform: scale(1.05);
         }
         
@@ -355,16 +197,12 @@
             margin-top: 40px;
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: #888;
-        }
-        
-        .emoji {
-            margin-right: 5px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
         }
         
         .viruses {
-            background-color: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 5px;
             margin: 20px 0;
@@ -375,107 +213,18 @@
             margin: 10px 0;
             padding: 10px;
             border-left: 3px solid #ff4444;
-            background-color: rgba(34, 34, 34, 0.8);
+            background: rgba(34, 34, 34, 0.8);
         }
         
-        /* Музыкальный плеер для Aero */
+        /* Музыкальный плеер в стиле Aero */
         .music-player {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 20px;
             margin: 30px 0;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(5px);
-        }
-        
-        /* Музыкальный плеер для Metro */
-        .metro-player {
-            background: #0078d7;
-            margin: 30px 0;
-            color: white;
-            font-family: 'JhengHei', sans-serif;
-        }
-        
-        .metro-player-header {
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            background: rgba(0,0,0,0.2);
-        }
-        
-        .metro-album-art {
-            width: 80px;
-            height: 80px;
-            margin-right: 20px;
-        }
-        
-        .metro-track-info {
-            flex: 1;
-        }
-        
-        .metro-track-title {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 5px;
-            font-family: 'JhengHei', sans-serif;
-        }
-        
-        .metro-track-artist, .metro-track-album {
-            opacity: 0.8;
-            margin-bottom: 3px;
-        }
-        
-        .metro-player-controls {
-            padding: 15px 20px;
-            background: rgba(0,0,0,0.1);
-        }
-        
-        .metro-progress-container {
-            width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.3);
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-        
-        .metro-progress-bar {
-            height: 100%;
-            background: white;
-            width: 30%;
-        }
-        
-        .metro-time-display {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
-        
-        .metro-control-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
-        }
-        
-        .metro-control-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .metro-control-btn:hover {
-            opacity: 1;
-        }
-        
-        .metro-play-pause {
-            font-size: 2.2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
         
         .player-header {
@@ -501,7 +250,11 @@
             font-weight: 600;
             color: #fff;
             margin-bottom: 5px;
-            font-family: var(--font-heading);
+        }
+        
+        .track-artist, .track-album {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3px;
         }
         
         .player-controls {
@@ -513,7 +266,7 @@
         .progress-container {
             width: 100%;
             height: 8px;
-            background: #333;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 4px;
             cursor: pointer;
             position: relative;
@@ -521,16 +274,17 @@
         
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, var(--accent-color), #00ffcc);
+            background: linear-gradient(90deg, #3b8be0, #00ffcc);
             border-radius: 4px;
             width: 0%;
+            transition: width 0.1s;
         }
         
         .time-display {
             display: flex;
             justify-content: space-between;
             font-size: 0.9rem;
-            color: #aaa;
+            color: rgba(255, 255, 255, 0.8);
         }
         
         .control-buttons {
@@ -541,289 +295,245 @@
         }
         
         .control-btn {
-            background: none;
+            background: rgba(255, 255, 255, 0.2);
             border: none;
             color: #fff;
             font-size: 1.5rem;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
         }
         
         .play-pause {
-            font-size: 2.5rem;
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
         }
         
-        /* Скрытие элементов для разных тем */
-        body.metro .aero-window,
-        body.metro .music-player {
-            display: none;
-        }
-        
-        body.aero .metro-tiles,
-        body.aero .metro-player {
-            display: none;
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
         }
         
         @media (max-width: 600px) {
-            .theme-switcher {
-                position: static;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-bottom: 20px;
+            .stats {
+                flex-direction: column;
             }
             
-            .theme-btn {
-                min-width: 100px;
-                font-size: 0.9rem;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            .metro-tiles {
-                grid-template-columns: 1fr;
+            h2 {
+                font-size: 1.5rem;
             }
             
-            .metro-tile.large,
-            .metro-tile.wide {
-                grid-column: span 1;
+            .player-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .album-art {
+                margin-right: 0;
+                margin-bottom: 15px;
             }
         }
     </style>
 </head>
-<body class="aero">
-    <!-- Переключатель тем -->
-    <div class="theme-switcher">
-        <button class="theme-btn theme-aero active" data-theme="aero">Aero</button>
-        <button class="theme-btn theme-metro" data-theme="metro">Metro</button>
-    </div>
-    
-    <!-- Контент для Aero -->
-    <div class="content-aero">
-        <header>
-            <h1>Nekich</h1>
-            <p class="subtitle">Создатель таких вирусов как Ricardo Fight 2 и King Von Locker Android</p>
-        </header>
-        
-        <!-- Окно в стиле Windows 7 -->
-        <div class="aero-window">
-            <div class="aero-titlebar">
-                <div class="aero-title">Обо мне</div>
-                <div class="aero-controls">
-                    <div class="aero-control-btn">−</div>
-                    <div class="aero-control-btn">□</div>
-                    <div class="aero-control-btn">×</div>
+<body>
+    <!-- Главное окно с информацией -->
+    <div class="aero-window">
+        <div class="aero-titlebar">
+            <div class="aero-title">Nekich (nekxd) - Официальный сайт</div>
+            <div class="aero-controls">
+                <div class="aero-control-btn">−</div>
+                <div class="aero-control-btn">□</div>
+                <div class="aero-control-btn">×</div>
+            </div>
+        </div>
+        <div class="aero-content">
+            <header>
+                <h1>Nekich (nekxd)</h1>
+                <p class="subtitle">Создатель таких вирусов как Ricardo Fight 2 и King Von Locker Android</p>
+            </header>
+            
+            <!-- Музыкальный плеер -->
+            <div class="music-player">
+                <div class="player-header">
+                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/00/68/13/006813b3-9ca1-2e6f-98df-4ef78cd6cb49/06UMGIM20452.rgb.jpg/1200x630bb.jpg" alt="Album Art" class="album-art">
+                    <div class="track-info">
+                        <div class="track-title">Late</div>
+                        <div class="track-artist">Kanye West</div>
+                        <div class="track-album">Late Registration</div>
+                    </div>
+                </div>
+                
+                <div class="player-controls">
+                    <div class="progress-container" id="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                    <div class="control-buttons">
+                        <button class="control-btn" id="rewind">⏪</button>
+                        <button class="control-btn play-pause" id="play-pause">▶️</button>
+                        <button class="control-btn" id="forward">⏩</button>
+                    </div>
+                </div>
+                
+                <audio id="audio" loop>
+                    <source src="https://robuxfree777.github.io/yaiko/late.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает аудио элемент.
+                </audio>
+            </div>
+            
+            <!-- Окно с информацией о канале -->
+            <div class="aero-window">
+                <div class="aero-titlebar">
+                    <div class="aero-title">Мой Telegram-канал</div>
+                    <div class="aero-controls">
+                        <div class="aero-control-btn">−</div>
+                        <div class="aero-control-btn">□</div>
+                        <div class="aero-control-btn">×</div>
+                    </div>
+                </div>
+                <div class="aero-content">
+                    <p>Посвященный торрентам, YouTube, экспериментам и прочему контенту на компьютерную тематику.</p>
+                    
+                    <div class="highlight">
+                        <p>Уже более <strong>900+ подписчиков</strong>!</p>
+                    </div>
                 </div>
             </div>
-            <div class="aero-content">
-                <p><strong>Telegram-канал:</strong> Посвященный торрентам.</p>
-                
-                <div class="highlight">
-                    <p>Уже более <strong>980+ подписчиков</strong>!</p>
+            
+            <!-- Окно с деятельностью -->
+            <div class="aero-window">
+                <div class="aero-titlebar">
+                    <div class="aero-title">Моя деятельность</div>
+                    <div class="aero-controls">
+                        <div class="aero-control-btn">−</div>
+                        <div class="aero-control-btn">□</div>
+                        <div class="aero-control-btn">×</div>
+                    </div>
                 </div>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <h3>Telegram</h3>
-                        <p>с 2024</p>
-                        <p>900+ подписчиков</p>
+                <div class="aero-content">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>Telegram</h3>
+                            <p>с 2024</p>
+                            <p>900+ подписчиков</p>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <h3>YouTube</h3>
+                            <p>с 2017</p>
+                            <p>Увлечение созданием контента</p>
+                        </div>
                     </div>
                     
-                    <div class="stat-item">
-                        <h3>YouTube</h3>
-                        <p>с 2017</p>
-                        <p>Увлечение созданием контента</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>Торренты</h3>
+                            <p>с 2025</p>
+                            <p>Перезаливка контента</p>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <h3>Программирование</h3>
+                            <p>с 2021</p>
+                            <p>Создание софта</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <h3>Торренты</h3>
-                        <p>с 2025</p>
-                        <p>Перезаливка контента</p>
-                    </div>
-                    
-                    <div class="stat-item">
-                        <h3>Программирование</h3>
-                        <p>с 2021</p>
-                        <p>Создание софта</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Музыкальный плеер для Aero -->
-        <div class="music-player">
-            <div class="player-header">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/00/68/13/006813b3-9ca1-2e6f-98df-4ef78cd6cb49/06UMGIM20452.rgb.jpg/1200x630bb.jpg" alt="Album Art" class="album-art">
-                <div class="track-info">
-                    <div class="track-title">Late</div>
-                    <div class="track-artist">Kanye West</div>
-                    <div class="track-album">Late Registration</div>
                 </div>
             </div>
             
-            <div class="player-controls">
-                <div class="progress-container" id="progress-container">
-                    <div class="progress-bar" id="progress-bar"></div>
+            <!-- Окно с вирусами -->
+            <div class="aero-window">
+                <div class="aero-titlebar">
+                    <div class="aero-title">Мои проекты</div>
+                    <div class="aero-controls">
+                        <div class="aero-control-btn">−</div>
+                        <div class="aero-control-btn">□</div>
+                        <div class="aero-control-btn">×</div>
+                    </div>
                 </div>
-                <div class="time-display">
-                    <span id="current-time">0:00</span>
-                    <span id="duration">3:50</span>
-                </div>
-                <div class="control-buttons">
-                    <button class="control-btn" id="rewind">⏪</button>
-                    <button class="control-btn play-pause" id="play-pause">▶️</button>
-                    <button class="control-btn" id="forward">⏩</button>
+                <div class="aero-content">
+                    <div class="viruses">
+                        <div class="virus-item">
+                            <h3>Ricardo Fight 2</h3>
+                            <p>Один из моих известных проектов</p>
+                        </div>
+                        <div class="virus-item">
+                            <h3>King Von Locker Android</h3>
+                            <p>Android-версия блокировщика</p>
+                        </div>
+                    </div>
+                    <p>Обратная связь: <a href="https://t.me/archiveviruses_bot" class="link">@archiveviruses_bot</a></p>
                 </div>
             </div>
             
-            <audio id="audio" loop>
-                <source src="https://robuxfree777.github.io/yaiko/late.mp3" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио элемент.
-            </audio>
-        </div>
-        
-        <!-- Остальной контент для Aero -->
-        <div class="aero-window">
-            <div class="aero-titlebar">
-                <div class="aero-title">Мои проекты</div>
-                <div class="aero-controls">
-                    <div class="aero-control-btn">−</div>
-                    <div class="aero-control-btn">□</div>
-                    <div class="aero-control-btn">×</div>
-                </div>
-            </div>
-            <div class="aero-content">
-                <div class="viruses">
-                    <div class="virus-item">
-                        <h3>Ricardo Fight 2</h3>
-                        <p>Один из моих известных проектов</p>
-                    </div>
-                    <div class="virus-item">
-                        <h3>King Von Locker Android</h3>
-                        <p>Android-версия блокировщика</p>
+            <!-- Окно с социальными сетями -->
+            <div class="aero-window">
+                <div class="aero-titlebar">
+                    <div class="aero-title">Социальные сети</div>
+                    <div class="aero-controls">
+                        <div class="aero-control-btn">−</div>
+                        <div class="aero-control-btn">□</div>
+                        <div class="aero-control-btn">×</div>
                     </div>
                 </div>
-                <p>Обратная связь: <a href="https://t.me/archiveviruses_bot" class="link">@archiveviruses_bot</a></p>
-                
-                <h2>Социальные сети</h2>
-                <div class="links">
-                    <a href="https://t.me/Nekich_Torrents" class="link">
-                        <img src="https://i.pinimg.com/736x/99/11/e3/9911e35de12022d64c8cb3c5386c7f96.jpg" alt="Telegram" class="link-icon">
-                        Telegram
-                    </a>
-                    <a href="https://ovk.to/nekich" class="link">
-                        <img src="https://4pda.to/s/qirtf22OpTGz0lXIbz26gdJPnTqN6b0yyD4hK.png" alt="OpenVK" class="link-icon">
-                        OpenVK
-                    </a>
-                    <a href="https://youtube.com/@nekich_xd" class="link">
-                        <img src="https://static.wikia.nocookie.net/logopedia/images/7/74/YouTube_icon_2012-2013_IOS.svg/revision/latest?cb=20250409190014" alt="YouTube" class="link-icon">
-                        YouTube
-                    </a>
-                    <a href="https://tiktok.com/@nekxddd" class="link">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2BGE9X_xrMTpTib8dgn-q2918MhybZz1AEw&s" alt="TikTok" class="link-icon">
-                        TikTok
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>С любовью и уважением к Вам, Nekich</p>
-            <p>© 2017 — <span id="current-year"></span></p>
-            <p>made by nekxd</p>
-        </div>
-    </div>
-    
-
-        <!-- Плитки Metro -->
-        <div class="metro-tiles">
-            <div class="metro-tile small">
-                <div class="tile-icon">📱</div>
-                <div>Telegram</div>
-                <div>900+ подписчиков</div>
-            </div>
-            <div class="metro-tile medium">
-                <div class="tile-icon">🎬</div>
-                <div>YouTube</div>
-                <div>с 2017</div>
-            </div>
-            <div class="metro-tile small">
-                <div class="tile-icon">📥</div>
-                <div>Торренты</div>
-                <div>с 2025</div>
-            </div>
-            <div class="metro-tile large">
-                <div class="tile-icon">💻</div>
-                <div>Программирование</div>
-                <div>с 2021</div>
-            </div>
-            <div class="metro-tile wide">
-                <div class="tile-icon">🦠</div>
-                <div>Мои вирусы</div>
-                <div>Ricardo Fight 2 & King Von Locker</div>
-            </div>
-        </div>
-        
-        <!-- Музыкальный плеер Metro -->
-        <div class="metro-player">
-            <div class="metro-player-header">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/00/68/13/006813b3-9ca1-2e6f-98df-4ef78cd6cb49/06UMGIM20452.rgb.jpg/1200x630bb.jpg" alt="Album Art" class="metro-album-art">
-                <div class="metro-track-info">
-                    <div class="metro-track-title">Late</div>
-                    <div class="metro-track-artist">Kanye West</div>
-                    <div class="metro-track-album">Late Registration</div>
+                <div class="aero-content">
+                    <div class="links">
+                        <a href="https://t.me/Nekich_Torrents" class="link">
+                            <img src="https://i.pinimg.com/736x/99/11/e3/9911e35de12022d64c8cb3c5386c7f96.jpg" alt="Telegram" class="link-icon">
+                            Telegram
+                        </a>
+                        <a href="https://ovk.to/nekich" class="link">
+                            <img src="https://4pda.to/s/qirtf22OpTGz0lXIbz26gdJPnTqN6b0yyD4hK.png" alt="OpenVK" class="link-icon">
+                            OpenVK
+                        </a>
+                        <a href="https://youtube.com/@nekich_xd" class="link">
+                            <img src="https://static.wikia.nocookie.net/logopedia/images/7/74/YouTube_icon_2012-2013_IOS.svg/revision/latest?cb=20250409190014" alt="YouTube" class="link-icon">
+                            YouTube
+                        </a>
+                        <a href="https://tiktok.com/@nekxddd" class="link">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2BGE9X_xrMTpTib8dgn-q2918MhybZz1AEw&s" alt="TikTok" class="link-icon">
+                            TikTok
+                        </a>
+                    </div>
                 </div>
             </div>
             
-            <div class="metro-player-controls">
-                <div class="metro-progress-container">
-                    <div class="metro-progress-bar"></div>
-                </div>
-                <div class="metro-time-display">
-                    <span>1:15</span>
-                    <span>4:32</span>
-                </div>
-                <div class="metro-control-buttons">
-                    <button class="metro-control-btn">⏮️</button>
-                    <button class="metro-control-btn metro-play-pause">▶️</button>
-                    <button class="metro-control-btn">⏭️</button>
-                </div>
+            <!-- Футер -->
+            <div class="footer">
+                <p>И ещё кое-чего прочего по мелочи :3</p>
+                <p>Подписывайтесь! Ведь вместе интереснее</p>
+                <p>С любовью и уважением к Вам, Nekich</p>
+                <p>© 2017 — <span id="current-year"></span></p>
+                <p>made by nekxd</p>
             </div>
-        </div>
-        
-        <!-- Социальные сети для Metro -->
-        <div class="metro-tiles">
-            <div class="metro-tile small" style="background: #0088cc;">
-                <div class="tile-icon">✈️</div>
-                <div>Telegram</div>
-            </div>
-            <div class="metro-tile small" style="background: #4680c2;">
-                <div class="tile-icon">OVK</div>
-                <div>OpenVK</div>
-            </div>
-            <div class="metro-tile small" style="background: #ff0000;">
-                <div class="tile-icon">▶️</div>
-                <div>YouTube</div>
-            </div>
-            <div class="metro-tile small" style="background: #000000;">
-                <div class="tile-icon">🎵</div>
-                <div>TikTok</div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>С любовью и уважением к Вам, Nekich</p>
-            <p>© 2017 — <span id="current-year-metro"></span></p>
-            <p>made by nekxd</p>
         </div>
     </div>
 
     <script>
         // Установка текущего года в футере
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        document.getElementById('current-year-metro').textContent = new Date().getFullYear();
         
-        // Музыкальный плеер для Aero
+        // Музыкальный плеер
         const audio = document.getElementById('audio');
         const playPauseBtn = document.getElementById('play-pause');
         const progressBar = document.getElementById('progress-bar');
@@ -833,12 +543,14 @@
         const rewindBtn = document.getElementById('rewind');
         const forwardBtn = document.getElementById('forward');
         
+        // Форматирование времени (секунды в мм:сс)
         function formatTime(seconds) {
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
         
+        // Обновление прогресс-бара
         function updateProgress() {
             const { currentTime, duration } = audio;
             const progressPercent = (currentTime / duration) * 100;
@@ -846,13 +558,16 @@
             currentTimeEl.textContent = formatTime(currentTime);
         }
         
+        // Установка прогресса при клике на прогресс-бар
         function setProgress(e) {
             const width = this.clientWidth;
             const clickX = e.offsetX;
             const duration = audio.duration;
+            
             audio.currentTime = (clickX / width) * duration;
         }
         
+        // Переключение воспроизведения/паузы
         function togglePlayPause() {
             if (audio.paused) {
                 audio.play();
@@ -863,43 +578,34 @@
             }
         }
         
+        // Перемотка назад на 10 секунд
         function rewind() {
             audio.currentTime = Math.max(0, audio.currentTime - 10);
         }
         
+        // Перемотка вперед на 10 секунд
         function forward() {
             audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
         }
         
+        // Обновление общей длительности трека
         audio.addEventListener('loadedmetadata', () => {
             durationEl.textContent = formatTime(audio.duration);
         });
         
+        // События для элементов управления
         audio.addEventListener('timeupdate', updateProgress);
         progressContainer.addEventListener('click', setProgress);
         playPauseBtn.addEventListener('click', togglePlayPause);
         rewindBtn.addEventListener('click', rewind);
         forwardBtn.addEventListener('click', forward);
         
+        // Автоматическое воспроизведение при загрузке страницы
         window.addEventListener('load', () => {
             audio.play().then(() => {
                 playPauseBtn.textContent = '⏸️';
             }).catch(error => {
                 console.log('Автовоспроизведение заблокировано браузером');
-            });
-        });
-        
-        // Переключение тем
-        const themeButtons = document.querySelectorAll('.theme-btn');
-        const body = document.body;
-        
-        themeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const theme = button.getAttribute('data-theme');
-                body.className = theme;
-                
-                themeButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
             });
         });
     </script>
