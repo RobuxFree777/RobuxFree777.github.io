@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nekich (nekxd)</title>
+    <title>Nekich - Визитка</title>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -37,15 +37,74 @@
             z-index: -1;
         }
         
-        /* Окно в стиле Windows 7 Aero */
+        /* Улучшенный эффект жидкого стекла (liquid glass) с анимацией и отражениями, более стеклянный */
+        .liquid-glass {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .liquid-glass::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+            animation: liquid-flow 30s infinite ease-in-out;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        .liquid-glass::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+        }
+        
+        @keyframes liquid-flow {
+            0% { 
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 0.6;
+            }
+            25% { 
+                transform: translate(15%, 15%) rotate(90deg) scale(1.1);
+                opacity: 0.7;
+            }
+            50% { 
+                transform: translate(30%, 30%) rotate(180deg) scale(1.2);
+                opacity: 0.8;
+            }
+            75% { 
+                transform: translate(15%, 15%) rotate(270deg) scale(1.1);
+                opacity: 0.7;
+            }
+            100% { 
+                transform: translate(0, 0) rotate(360deg) scale(1);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Окно в стиле Windows 7 Aero с улучшенным стеклом */
         .aero-window {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255,255,255,0.15);
+            backdrop-filter: blur(25px) saturate(1.8); /* Усиленный блюр для более стеклянного эффекта */
             margin: 20px 0;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .aero-window:hover {
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(255,255,255,0.2);
+            backdrop-filter: blur(30px) saturate(2);
         }
         
         .aero-titlebar {
@@ -55,6 +114,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .aero-title {
@@ -70,22 +130,146 @@
         }
         
         .aero-control-btn {
-            width: 22px;
-            height: 22px;
-            border-radius: 4px;
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.3);
+            width: 28px; /* Увеличен размер для аутентичности Win7 */
+            height: 20px;
+            border-radius: 2px; /* Более квадратные углы как в Win7 */
+            background: transparent;
+            border: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #000; /* Черный текст для символов */
             font-size: 10pt;
+            font-weight: bold;
             cursor: pointer;
             transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
         }
         
+        .aero-control-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        .aero-control-btn:hover::before {
+            background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+        }
+        
+        /* Специфические цвета для кнопок как в Windows 7 Aero */
+        .aero-control-btn.minimize:hover::before {
+            background: linear-gradient(180deg, #4da6ff 0%, #007bff 100%);
+        }
+        
+        .aero-control-btn.maximize:hover::before {
+            background: linear-gradient(180deg, #28a745 0%, #218838 100%);
+        }
+        
+        .aero-control-btn.close {
+            color: #fff;
+        }
+        
+        .aero-control-btn.close::before {
+            background: linear-gradient(180deg, #ff4d4d 0%, #cc0000 100%);
+            opacity: 1;
+        }
+        
+        .aero-control-btn.close:hover::before {
+            background: linear-gradient(180deg, #ff6666 0%, #ff0000 100%);
+        }
+        
+        .aero-control-btn:active {
+            animation: click-animation 0.2s ease;
+        }
+
+        @keyframes click-animation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.9);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Анимация пульсации для кнопок на hover */
         .aero-control-btn:hover {
-            background: rgba(255,255,255,0.3);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Цвет-specific пульсация с glow */
+        .aero-control-btn.minimize:hover {
+            box-shadow: 0 0 10px #007bff;
+            animation: pulse-blue 1.5s infinite;
+        }
+
+        @keyframes pulse-blue {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+            }
+        }
+
+        .aero-control-btn.maximize:hover {
+            box-shadow: 0 0 10px #28a745;
+            animation: pulse-green 1.5s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+            }
+        }
+
+        .aero-control-btn.close:hover {
+            box-shadow: 0 0 10px #cc0000;
+            animation: pulse-red 1.5s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% {
+                box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(204, 0, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(204, 0, 0, 0);
+            }
         }
         
         .aero-content {
@@ -101,7 +285,7 @@
             font-size: 2.8rem;
             margin-bottom: 10px;
             color: #fff;
-            text-shadow: 0 0 10px rgba(59, 139, 224, 0.7);
+            text-shadow: 0 0 10px rgba(59, 139, 224, 0.7), 0 0 20px rgba(59, 139, 224, 0.5);
             font-weight: 300;
         }
         
@@ -155,6 +339,15 @@
             flex: 1;
             transition: transform 0.3s;
             backdrop-filter: blur(5px);
+            color: #333333; /* Более темный текст */
+        }
+        
+        .stat-item h3 {
+            color: #555555; /* Более темные заголовки */
+        }
+        
+        .stat-item p {
+            color: #444444; /* Более темные параграфы */
         }
         
         .stat-item:hover {
@@ -214,9 +407,16 @@
             padding: 10px;
             border-left: 3px solid #ff4444;
             background: rgba(34, 34, 34, 0.8);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .virus-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
         
-        /* Музыкальный плеер в стиле Aero */
+        /* Музыкальный плеер в стиле Aero с жидким стеклом */
         .music-player {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -224,7 +424,22 @@
             margin: 30px 0;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px) saturate(1.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .music-player::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            animation: liquid-flow 25s infinite linear;
+            z-index: -1;
+            opacity: 0.4;
         }
         
         .player-header {
@@ -353,14 +568,14 @@
     </style>
 </head>
 <body>
-    <!-- Главное окно с информацией -->
-    <div class="aero-window">
+    <!-- Главное окно с информацией и эффектом жидкого стекла -->
+    <div class="aero-window liquid-glass">
         <div class="aero-titlebar">
             <div class="aero-title">Nekich (nekxd) - Официальный сайт</div>
             <div class="aero-controls">
-                <div class="aero-control-btn">−</div>
-                <div class="aero-control-btn">□</div>
-                <div class="aero-control-btn">×</div>
+                <div class="aero-control-btn minimize">−</div>
+                <div class="aero-control-btn maximize">□</div>
+                <div class="aero-control-btn close">×</div>
             </div>
         </div>
         <div class="aero-content">
@@ -369,7 +584,7 @@
                 <p class="subtitle">Создатель таких вирусов как Ricardo Fight 2 и King Von Locker Android</p>
             </header>
             
-            <!-- Музыкальный плеер -->
+            <!-- Музыкальный плеер с жидким стеклом -->
             <div class="music-player">
                 <div class="player-header">
                     <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/00/68/13/006813b3-9ca1-2e6f-98df-4ef78cd6cb49/06UMGIM20452.rgb.jpg/1200x630bb.jpg" alt="Album Art" class="album-art">
@@ -402,13 +617,13 @@
             </div>
             
             <!-- Окно с информацией о канале -->
-            <div class="aero-window">
+            <div class="aero-window liquid-glass">
                 <div class="aero-titlebar">
                     <div class="aero-title">Мой Telegram-канал</div>
                     <div class="aero-controls">
-                        <div class="aero-control-btn">−</div>
-                        <div class="aero-control-btn">□</div>
-                        <div class="aero-control-btn">×</div>
+                        <div class="aero-control-btn minimize">−</div>
+                        <div class="aero-control-btn maximize">□</div>
+                        <div class="aero-control-btn close">×</div>
                     </div>
                 </div>
                 <div class="aero-content">
@@ -421,24 +636,24 @@
             </div>
             
             <!-- Окно с деятельностью -->
-            <div class="aero-window">
+            <div class="aero-window liquid-glass">
                 <div class="aero-titlebar">
                     <div class="aero-title">Моя деятельность</div>
                     <div class="aero-controls">
-                        <div class="aero-control-btn">−</div>
-                        <div class="aero-control-btn">□</div>
-                        <div class="aero-control-btn">×</div>
+                        <div class="aero-control-btn minimize">−</div>
+                        <div class="aero-control-btn maximize">□</div>
+                        <div class="aero-control-btn close">×</div>
                     </div>
                 </div>
                 <div class="aero-content">
                     <div class="stats">
-                        <div class="stat-item">
+                        <div class="stat-item liquid-glass">
                             <h3>Telegram</h3>
                             <p>с 2024</p>
                             <p>900+ подписчиков</p>
                         </div>
                         
-                        <div class="stat-item">
+                        <div class="stat-item liquid-glass">
                             <h3>YouTube</h3>
                             <p>с 2017</p>
                             <p>Увлечение созданием контента</p>
@@ -446,13 +661,13 @@
                     </div>
                     
                     <div class="stats">
-                        <div class="stat-item">
+                        <div class="stat-item liquid-glass">
                             <h3>Торренты</h3>
                             <p>с 2025</p>
                             <p>Перезаливка контента</p>
                         </div>
                         
-                        <div class="stat-item">
+                        <div class="stat-item liquid-glass">
                             <h3>Программирование</h3>
                             <p>с 2021</p>
                             <p>Создание софта</p>
@@ -462,57 +677,61 @@
             </div>
             
             <!-- Окно с вирусами -->
-            <div class="aero-window">
+            <div class="aero-window liquid-glass">
                 <div class="aero-titlebar">
                     <div class="aero-title">Мои проекты</div>
                     <div class="aero-controls">
-                        <div class="aero-control-btn">−</div>
-                        <div class="aero-control-btn">□</div>
-                        <div class="aero-control-btn">×</div>
+                        <div class="aero-control-btn minimize">−</div>
+                        <div class="aero-control-btn maximize">□</div>
+                        <div class="aero-control-btn close">×</div>
                     </div>
                 </div>
                 <div class="aero-content">
-                    <div class="viruses">
-                        <div class="virus-item">
+                    <div class="viruses liquid-glass">
+                        <div class="virus-item liquid-glass">
                             <h3>Ricardo Fight 2</h3>
                             <p>Один из моих известных проектов</p>
                         </div>
-                        <div class="virus-item">
+                        <div class="virus-item liquid-glass">
                             <h3>King Von Locker Android</h3>
                             <p>Android-версия блокировщика</p>
                         </div>
                     </div>
-                    <p>Обратная связь: <a href="https://t.me/archiveviruses_bot" class="link">@archiveviruses_bot</a></p>
+                    <p>Обратная связь: <a href="https://t.me/archiveviruses_bot" class="link liquid-glass">@archiveviruses_bot</a></p>
                 </div>
             </div>
             
             <!-- Окно с социальными сетями -->
-            <div class="aero-window">
+            <div class="aero-window liquid-glass">
                 <div class="aero-titlebar">
                     <div class="aero-title">Социальные сети</div>
                     <div class="aero-controls">
-                        <div class="aero-control-btn">−</div>
-                        <div class="aero-control-btn">□</div>
-                        <div class="aero-control-btn">×</div>
+                        <div class="aero-control-btn minimize">−</div>
+                        <div class="aero-control-btn maximize">□</div>
+                        <div class="aero-control-btn close">×</div>
                     </div>
                 </div>
                 <div class="aero-content">
                     <div class="links">
-                        <a href="https://t.me/Nekich_Torrents" class="link">
+                        <a href="https://t.me/Nekich_Torrents" class="link liquid-glass">
                             <img src="https://i.pinimg.com/736x/99/11/e3/9911e35de12022d64c8cb3c5386c7f96.jpg" alt="Telegram" class="link-icon">
                             Telegram
                         </a>
-                        <a href="https://ovk.to/nekich" class="link">
+                        <a href="https://ovk.to/nekich" class="link liquid-glass">
                             <img src="https://4pda.to/s/qirtf22OpTGz0lXIbz26gdJPnTqN6b0yyD4hK.png" alt="OpenVK" class="link-icon">
                             OpenVK
                         </a>
-                        <a href="https://youtube.com/@nekich_xd" class="link">
+                        <a href="https://youtube.com/@nekich_xd" class="link liquid-glass">
                             <img src="https://static.wikia.nocookie.net/logopedia/images/7/74/YouTube_icon_2012-2013_IOS.svg/revision/latest?cb=20250409190014" alt="YouTube" class="link-icon">
                             YouTube
                         </a>
-                        <a href="https://tiktok.com/@nekxddd" class="link">
+                        <a href="https://tiktok.com/@nekxddd" class="link liquid-glass">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2BGE9X_xrMTpTib8dgn-q2918MhybZz1AEw&s" alt="TikTok" class="link-icon">
                             TikTok
+                        </a>
+                        <a href="https://steamcommunity.com/id/nekichxd/" class="link liquid-glass">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1024px-Steam_icon_logo.svg.png" alt="Steam" class="link-icon">
+                            Steam
                         </a>
                     </div>
                 </div>
@@ -520,11 +739,10 @@
             
             <!-- Футер -->
             <div class="footer">
-                <p>И ещё кое-чего прочего по мелочи :3</p>
-                <p>Подписывайтесь! Ведь вместе интереснее</p>
                 <p>С любовью и уважением к Вам, Nekich</p>
                 <p>© 2017 — <span id="current-year"></span></p>
                 <p>made by nekxd</p>
+                <p><a href="https://donatepay.ru/don/nekichxd" class="link liquid-glass">Поддержать (Donate)</a></p>
             </div>
         </div>
     </div>
